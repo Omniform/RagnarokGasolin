@@ -19,4 +19,11 @@ html {
 
 body {
   margin-bottom: 60px;
+  background-color: #840b1c;
+}
+
+.myLib
+{
+  background-color: #840b1c;
+  color: white;
 }
