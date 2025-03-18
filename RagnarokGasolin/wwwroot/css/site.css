@@ -1,31 +1,42 @@
-html {
+html 
+{
   font-size: 14px;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 768px) 
+{
   html {
     font-size: 16px;
   }
 }
 
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus 
+{
   box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
 }
 
-html {
+html 
+{
   position: relative;
   min-height: 100%;
 }
 
-body {
+body 
+{
   margin-bottom: 60px;
   background-color: #840b1c;
+  color: white;
 }
 
-.myLib
+.gamer 
 {
-  background-color: #840b1c;
-  color: white;
+    color: black;
+}
+
+.myLib 
+{
+    background-color: #840b1c;
+    color: white;
 }
 
 .carousel slide {
@@ -48,3 +59,4 @@ body {
     max-height: 35vh;
     object-fit: contain;
 }
+ 
