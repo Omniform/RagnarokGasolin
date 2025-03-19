@@ -1,6 +1,13 @@
 let list = document.getElementById("bandMembers");
+let drIV = document.getElementById("drInterview");
 let artistNames = [];
 let linkList = [];
+
+list.style.cssFloat = "left";
+drIV.style.cssFloat = "right";
+
+drIV.setAttribute("src", "https://www.youtube.com/embed/PoHwxGFGj3s?si=RPJayMzGS4NkDrCK");
+drIV.style.scale = "2";
 
 function AddArtist(name, url)
 {
@@ -23,6 +30,7 @@ for (i = 0; i < artistNames.length; i++)
     li.classList.add("nav-item");
     a.classList.add("nav-link");
     a.classList.add("text-light");
+
     a.setAttribute("href", linkList[i]);
     li.appendChild(a);
     list.appendChild(li);
