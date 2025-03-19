@@ -21,16 +21,10 @@ html
   min-height: 100%;
 }
 
-body 
-{
-  margin-bottom: 60px;
-  background-color: #840b1c;
-  color: white;
-}
-
-.gamer 
-{
-    color: black;
+body {
+    margin-bottom: 60px;
+    background-color: rgb(40,40,40);
+    color: white;
 }
 
 .myLib 
@@ -95,6 +89,21 @@ body
     height: 15px;
     border-radius: 50%;
     background: white;
+}
+ 
+nav
+{
+    background-color: rgb(130,0,0);
+}
+
+footer {
+    background-color: rgb(139,0,0)
+}
+.topbuffer
+{
+    margin-top: 10px;
+    font-size: 250px;
+    font-family: Papyrus;
 }
 
 .timeline-component-bg{
