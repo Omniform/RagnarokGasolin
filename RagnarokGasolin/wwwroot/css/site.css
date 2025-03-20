@@ -55,25 +55,18 @@ body {
 }
 
 .timeline-date-r {
+    text-align: right;
     position: absolute;
     min-width: 200px;
     top: 50%;
     left: 100%;
     transform: translate(-100%, -10%);
-    
 }
 .timeline-date-l {
     position: absolute;
     min-width: 200px;
     top: 50%;
     transform: translateY(-10%);
-}
-
-.timeline-date-right {
-    text-align: right;
-}
-.timeline-date-left {
-    text-align: left;
 }
 
 .timeline-middle{
