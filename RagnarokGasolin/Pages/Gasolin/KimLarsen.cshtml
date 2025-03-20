@@ -1,4 +1,5 @@
 ﻿@page
+@using RagnarokGasolin.Models
 @model RagnarokGasolin.Pages.Gasolin.KimLarsenModel
 @{
 }
@@ -19,146 +20,57 @@
         <div class="row">
             <div class="col">
                 <h1>
-                    Kim Larsen
+                    @Model.BandMember.Name
                 </h1>
             </div>
         </div>
         <div class="row">
             <div class="col">
                 @* Taget fra https://da.wikipedia.org/wiki/Kim_Larsen *@
-                <p> Kim Mellius Flyvholm Larsen (født 23. oktober 1945 i København, død 30. september 2018 i Odense) 
-                    var en dansk sanger, sangskriver, folkeskolelærer, forfatter og guitarist. 
-                    Han begyndte sin musikalske karriere i 1968 efter en kort periode som folkeskolelærer og blev fra 1969 kendt som medlem af rockgruppen Gasolin. 
-                    I sin tid med Gasolin (varede indtil 1978) udgav Larsen dog også såvel soloplader og plader med sit fritidsband, 
-                    der blev kendt under flere navne, og efter Gasolins opløsning fortsatte Larsen som solist og bandleder.
+                <p class="description">@Model.BandMember.Description
                 </p> 
             </div>
         </div>
     </div>
-    <div class="timeline">
-         <!-- #region Kim Larsens fødsel -->
+    
+    <form method="get">
+            @foreach(TimelineInfo timelineInfo in Model.BandMember.TimelineInfo){
+                <div class="timeline">
+                @if(timelineInfo.IsRight){
+                    <div class="timeline-component timeline-date-parent">
+                        <div class="timeline-date-r timeline-date-right">@timelineInfo.Date</div>
+                    </div>
 
-        <div class="timeline-component timeline-date-parent">
-            <div class="timeline-date-r timeline-date-right">23. oktober 1945</div>
-        </div>
+                    <div class="timeline-middle">
+                        <div class="timeline-point"></div>
 
-        <div class="timeline-middle">
-            <div class="timeline-point"></div>
+                    </div>
+                    <div class="timeline-component timeline-component-bg">
+                        <h2>@timelineInfo.Title</h2>
+                        <p class="timeline-paragraph">
+                            @timelineInfo.Description
+                        </p>
 
-        </div>
-        <div class="timeline-component timeline-component-bg">
-            <h2>Fødsel</h2>
-            <p class="timeline-paragraph">
-                Kim Melius Flyvholm Larsen blev født i København. Han voksede op på Christianshavn, hvor han tidligt blev fascineret af musik.
-                Hans barndom var præget af arbejderklassemiljøet, hvilket senere kom til udtryk i hans musikalske tekster og temaer.
-            </p>
+                    </div>
+                } else{
+                    <div class="timeline-component timeline-component-bg">
+                        <h2>@timelineInfo.Title</h2>
+                        <p class="timeline-paragraph">
+                            @timelineInfo.Description
+                        </p>
 
-        </div>
+                    </div>
+                    <div class="timeline-middle">
+                        <div class="timeline-point"></div>
 
-        <!-- #endregion -->
-        
-        <!-- #region Kim Larsens barndom -->
-        <div class="timeline-component timeline-component-bg">
-            <h2>Inspiration</h2>
-            <p class="timeline-paragraph">
-                Som 13-årig blev Kim introduceret til rock and roll, især Little Richard, hvilket vækkede hans interesse for musik.
-                Denne musikalske opdagelse inspirerede ham til at begynde at spille guitar og drømme om en karriere inden for musikken.
-            </p>
-
-        </div>
-        <div class="timeline-middle">
-            <div class="timeline-point"></div>
-
-        </div>
-        <div class="timeline-component timeline-date-parent">
-            <div class="timeline-date-l timeline-date-left">23. oktober 1945</div>
-        </div>
-
-
-        <!-- #endregion -->
-        
-        
-        <!-- #region Kim Larsens ungdom -->
-        <div class="timeline-component timeline-date-parent">
-            <div class="timeline-date-r timeline-date-right">1960'erne</div>
-        </div>
-
-        <div class="timeline-middle">
-            <div class="timeline-point"></div>
-
-        </div>
-        <div class="timeline-component timeline-component-bg">
-            <h2>Udannelse</h2>
-            <p class="timeline-paragraph">
-                Kim Larsen studerede på Askov Højskole og senere på Frederiksberg Seminarium, hvor han uddannede sig som skolelærer. 
-                Selvom han kortvarigt arbejdede som lærer, trak musikken ham i en anden retning, og han begyndte at optræde på lokale spillesteder.
-            </p>
-
-        </div>
-        <!-- #endregion -->
-        
-
-        <!-- #region Oprettelse af Gasolin -->
-
-        <div class="timeline-component timeline-component-bg">
-            <h2>Oprettelse af Gasolin'</h2>
-            <p class="timeline-paragraph">
-                Sammen med Franz Beckerlee og Wili Jønsson dannede Kim Larsen bandet Gasolin'. Med tilføjelsen af trommeslageren Søren Berlev blev de en af Danmarks mest succesrige rockgrupper. 
-                Deres musik kombinerede rock med danske tekster, hvilket gav dem en unik lyd.
-            </p>
-
-        </div>
-        <div class="timeline-middle">
-            <div class="timeline-point"></div>
-
-        </div>
-        <div class="timeline-component timeline-date-parent">
-            <div class="timeline-date-l timeline-date-left">1969</div>
-        </div>
-
-        <!-- #endregion -->
-        <!-- #region Debutalbum "Gasolin'" -->
-        <div class="timeline-component timeline-date-parent">
-            <div class="timeline-date-r timeline-date-right">1971</div>
-        </div>
-
-        <div class="timeline-middle">
-            <div class="timeline-point"></div>
-
-        </div>
-        <div class="timeline-component timeline-component-bg">
-            <h2>debutalbum "Gasolin'"</h2>
-            <p class="timeline-paragraph">
-                Gasolin' udgav deres debutalbum "Gasolin'", som markerede starten på deres indflydelse på den danske rockscene. 
-                Albummet indeholdt sange, der hurtigt blev populære og cementerede bandets position i dansk musik.​
-            </p>
-
-        </div>
-
-
-        <!-- #endregion -->
-
-        <!-- #region Flere succesfulde albums -->
-
-        <div class="timeline-component timeline-component-bg">
-            <h2>Oprettelse af Gasolin'</h2>
-            <p class="timeline-paragraph">
-                I denne periode udgav Gasolin' flere succesfulde albums, herunder "Gas 5" og "Efter endnu en dag". 
-                Deres musik blev soundtrack for en generation og indeholdt hits som "Kvinde min" og "This is my life".
-            </p>
-
-        </div>
-        <div class="timeline-middle">
-            <div class="timeline-point"></div>
-
-        </div>
-        <div class="timeline-component timeline-date-parent">
-            <div class="timeline-date-l timeline-date-left">1973-1977</div>
-        </div>
-
-        <!-- #endregion -->
-
-    </div>
+                    </div>
+                    <div class="timeline-component timeline-date-parent">
+                        <div class="timeline-date-l timeline-date-left">@timelineInfo.Date</div>
+                    </div>
+                }
+                </div>
+            }
+        </form>
     
     
 
