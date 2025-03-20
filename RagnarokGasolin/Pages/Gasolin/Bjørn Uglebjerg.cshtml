@@ -1,4 +1,75 @@
 ﻿@page
+@using RagnarokGasolin.Models
 @model RagnarokGasolin.Pages.Gasolin.Bjørn_UglebjergModel
 @{
 }
+<body>
+    <div class="container text-center">
+        <div class="row">
+            <div class="col">
+            </div>
+            <div class="col-8">
+                <a> <img class="img-fluid" src="~/img/@Model.BandMember.ImgPath" /></a>
+            </div>
+            <div class="col">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <h1>
+                    @Model.BandMember.Name
+                </h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <p class="description">
+                    @Model.BandMember.Description
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <form method="get">
+        @foreach (TimelineInfo timelineInfo in Model.BandMember.TimelineInfo)
+        {
+            <div class="timeline">
+                @if (timelineInfo.IsRight)
+                {
+                    <div class="timeline-component timeline-date-parent">
+                        <div class="timeline-date-r timeline-date-right">@timelineInfo.Date</div>
+                    </div>
+
+                    <div class="timeline-middle">
+                        <div class="timeline-point"></div>
+
+                    </div>
+                    <div class="timeline-component timeline-component-bg">
+                        <h2>@timelineInfo.Title</h2>
+                        <p class="timeline-paragraph">
+                            @timelineInfo.Description
+                        </p>
+
+                    </div>
+                }
+                else
+                {
+                    <div class="timeline-component timeline-component-bg">
+                        <h2>@timelineInfo.Title</h2>
+                        <p class="timeline-paragraph">
+                            @timelineInfo.Description
+                        </p>
+
+                    </div>
+                    <div class="timeline-middle">
+                        <div class="timeline-point"></div>
+
+                    </div>
+                    <div class="timeline-component timeline-date-parent">
+                        <div class="timeline-date-l timeline-date-left">@timelineInfo.Date</div>
+                    </div>
+                }
+            </div>
+        }
+    </form>
+</body>

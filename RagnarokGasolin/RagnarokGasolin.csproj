@@ -14,10 +14,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="wwwroot\img\Kim1.jpg" />
-    <None Include="wwwroot\img\Kim2.jpg" />
-    <None Include="wwwroot\img\Kim3.jpg" />
-    <None Include="wwwroot\img\Kim4.jpg" />
+    <None Include="wwwroot\img\KimLarsen\Kim1.jpg" />
+    <None Include="wwwroot\img\KimLarsen\Kim2.jpg" />
+    <None Include="wwwroot\img\KimLarsen\Kim3.jpg" />
+    <None Include="wwwroot\img\KimLarsen\Kim4.jpg" />
   </ItemGroup>
 
   <ItemGroup>
@@ -27,6 +27,10 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.7" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\img\SørenBerlev\" />
   </ItemGroup>
 
 </Project>

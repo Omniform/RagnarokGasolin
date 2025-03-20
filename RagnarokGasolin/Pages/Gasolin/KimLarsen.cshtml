@@ -12,7 +12,7 @@
             <div class="col">
             </div>
             <div class="col-8">
-                <a> <img class="img-fluid" src="~/img/Kim4.jpg" /></a>
+                <a> <img class="img-fluid" src="~/img/@Model.BandMember.ImgPath" /></a>
             </div>
             <div class="col">
             </div>
@@ -26,7 +26,6 @@
         </div>
         <div class="row">
             <div class="col">
-                @* Taget fra https://da.wikipedia.org/wiki/Kim_Larsen *@
                 <p class="description">@Model.BandMember.Description
                 </p> 
             </div>
@@ -38,7 +37,9 @@
                 <div class="timeline">
                 @if(timelineInfo.IsRight){
                     <div class="timeline-component timeline-date-parent">
-                        <div class="timeline-date-r timeline-date-right">@timelineInfo.Date</div>
+                        <div class="timeline-date-r timeline-date-right">
+                            @timelineInfo.Date
+                        </div>
                     </div>
 
                     <div class="timeline-middle">
@@ -46,7 +47,9 @@
 
                     </div>
                     <div class="timeline-component timeline-component-bg">
-                        <h2>@timelineInfo.Title</h2>
+                        <h2>
+                            @timelineInfo.Title
+                        </h2>
                         <p class="timeline-paragraph">
                             @timelineInfo.Description
                         </p>
@@ -54,7 +57,9 @@
                     </div>
                 } else{
                     <div class="timeline-component timeline-component-bg">
-                        <h2>@timelineInfo.Title</h2>
+                        <h2>
+                            @timelineInfo.Title
+                        </h2>
                         <p class="timeline-paragraph">
                             @timelineInfo.Description
                         </p>
@@ -62,10 +67,11 @@
                     </div>
                     <div class="timeline-middle">
                         <div class="timeline-point"></div>
-
                     </div>
                     <div class="timeline-component timeline-date-parent">
-                        <div class="timeline-date-l timeline-date-left">@timelineInfo.Date</div>
+                        <div class="timeline-date-l timeline-date-left">
+                            @timelineInfo.Date
+                        </div>
                     </div>
                 }
                 </div>
