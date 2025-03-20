@@ -12,39 +12,36 @@ namespace RagnarokGasolin.Pages.Gasolin
         public GasolinModel(ILogger<GasolinModel> logger)
         {
             _logger = logger;
-        }
 
-        // public List<string> GetArtists()
-        // {
-        //     return m_artists.GetArtists();
-        // }
-
-        // public List<string> OnGetGetLink()
-        // {
-        //     return m_artists.GetLinks();
-        // }
-
-        public string OnGetGetArtist(int position)
-        {
-            return m_artists.GetArtist(position);
-        }
-
-        public string OnGetGetLink(int position)
-        {
-            return m_artists.GetLink(position);
-        }
-
-        public void OnGet()
-        {
-        }
-
-        public void OnGetAddArtists()
-        {
             m_artists.Add("Kim Larsen", "/Gasolin/KimLarsen");
             m_artists.Add("Franz Beckerlee", "/Gasolin/Franz Beckerlee");
             m_artists.Add("Wili Jønsson", "/Gasolin/Wili Jønsson");
             m_artists.Add("Søren Berlev", "/Gasolin/Søren Berlev");
             m_artists.Add("Bjørn Uglebjerg", "/Gasolin/Bjørn Uglebjerg");
+        }
+
+        public List<string> GetArtists()
+        {
+            return m_artists.GetArtists();
+        }
+
+        public List<string> GetLinks()
+        {
+            return m_artists.GetLinks();
+        }
+
+        public string GetArtistAt(int position)
+        {
+            return m_artists.GetArtistAt(position);
+        }
+
+        public string GetLinkAt(int position)
+        {
+            return m_artists.GetLinkAt(position);
+        }
+
+        public void OnGet()
+        {
         }
     }
 
@@ -55,12 +52,12 @@ namespace RagnarokGasolin.Pages.Gasolin
 
         public MtkArtist(){}
 
-        public string GetArtist(int artistPosition)
+        public string GetArtistAt(int artistPosition)
         {
             return m_artistNames[artistPosition];
         }
 
-        public string GetLink(int linkPosition)
+        public string GetLinkAt(int linkPosition)
         {
             return m_links[linkPosition];
         }
