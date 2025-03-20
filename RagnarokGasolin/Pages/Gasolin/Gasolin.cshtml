@@ -8,5 +8,25 @@
 <p>Bandmedlemmer</p>
 <div id="bandMembers"></div>
 <iframe id="drInterview"></iframe>
+@* <ul>
+    <li class="nav-item">
+        <a class="nav-link text-dark" asp-area="" asp-page="/Gasolin/KimLarsen">Kim Larsen</a>
+    </li>
+</ul> *@
 
-<script src="../js/Gasolin.js"></script>
+<a asp-page-handler="AddArtists"></a>
+
+<ul>
+    @for (var i = 0; i < Model.m_artists.GetArtists().Count; i++)
+    {
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src={...} alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="@Model.m_artists.GetArtist(i)" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>
+    }
+</ul>
+@* <script src="../js/Gasolin.js"></script> *@
