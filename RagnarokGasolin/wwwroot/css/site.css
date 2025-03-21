@@ -42,6 +42,8 @@ body {
     padding: 25px;
 }
 
+
+
 .timeline{
     margin: 0 auto;
     max-width: 750px;
@@ -95,6 +97,7 @@ nav
 footer {
     background-color: rgb(139,0,0)
 }
+
 .topbuffer
 {
     margin-top: 10vh;
