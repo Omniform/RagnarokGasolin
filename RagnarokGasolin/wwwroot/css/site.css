@@ -42,6 +42,8 @@ body {
     padding: 25px;
 }
 
+
+
 .timeline{
     margin: 0 auto;
     max-width: 750px;
@@ -95,10 +97,12 @@ nav
 footer {
     background-color: rgb(139,0,0)
 }
+
 .topbuffer
 {
-    margin-top: 10px;
-    font-size: 250px;
+    margin-top: 10vh;
+    font-size: 5vw;
+    font-size-adjust: 1;
     font-family: Papyrus;
 }
 
@@ -108,7 +112,7 @@ footer {
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
 }
-
+/*enables light colorchange when hovering text in navbar*/
 li a:hover {
     background-color: rgba(255, 255, 255, 0.2);
 }
