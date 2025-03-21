@@ -45,8 +45,11 @@ namespace RagnarokGasolin.Pages.Gasolin
 
         public Artists()
         {
-            cards.Add(new Card("Kim Larsen", "...", "Kim Larsen Img", "This is him", "https://google.com", "Click me"));
-            cards.Add(new Card("Franz Beckerlee", "...", "Franz Beckerlee Img", "This is him", "https://google.com", "Click me"));
+            cards.Add(new Card("Kim Larsen", "...", "Kim Larsen Img", "This is him", "KimLarsen", "Click me"));
+            cards.Add(new Card("Bjørn Uglebjerg", "...", "Bjørn Uglebjerg Img", "This is him", "Bjørn Uglebjerg", "Click me"));
+            cards.Add(new Card("Søren Berlev", "...", "Søren Berlev Img", "This is him", "Søren Berlev", "Click me"));
+            cards.Add(new Card("Franz Beckerlee", "...", "Franz Beckerlee Img", "This is him", "Bjørn Uglebjerg", "Click me"));
+            cards.Add(new Card("Wili Jønsson", "...", "Wili Jønsson Img", "This is him", "Wili Jønsson", "Click me"));
         }
     }
 }
