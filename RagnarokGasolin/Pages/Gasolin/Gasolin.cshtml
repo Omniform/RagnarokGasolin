@@ -8,16 +8,10 @@
 <p>Bandmedlemmer</p>
 <div id="bandMembers"></div>
 <iframe id="drInterview"></iframe>
-@* <ul>
-    <li class="nav-item">
-        <a class="nav-link text-dark" asp-area="" asp-page="/Gasolin/KimLarsen">Kim Larsen</a>
-    </li>
-</ul> *@
 
 <a asp-page-handler="AddArtists"></a>
 
 <ul>
-    @* @for (var i = 0; i < Model.GetArtists().Count; i++) *@
     @foreach (Card card in Model.artists.cards)
     {
         <div class="card" style="width: 18rem;">
