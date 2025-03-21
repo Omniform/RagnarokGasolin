@@ -1,22 +1,44 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using RagnarokGasolin.Models;
 
 namespace RagnarokGasolin.Pages.Gasolin
 {
     public class GasolinModel : PageModel
     {
+        
+        public Artists artists = new();
+
         private readonly ILogger<GasolinModel> _logger;
+        private BandMember bandMember = new BandMember("/Gasolin2.png", "/Gasolin1.jpg", "Gasolin' var et dansk rockband, der blev dannet i 1969 af Kim Larsen, Franz Beckerlee og Wili Jønsson. Senere blev trommeslager Søren Berlev en fast del af gruppen. Bandet var en af de mest markante og succesfulde musikgrupper i Danmark i 1970'erne og opnåede en enorm popularitet med deres energiske rockmusik, samfundsrelevante tekster og unikke blanding af blues, folk og hård rock.");
+
+        [BindProperty]
+        public BandMember BandMember { get { return bandMember; } set { bandMember = value; } }
 
         public GasolinModel(ILogger<GasolinModel> logger)
         {
             _logger = logger;
         }
-
-        public Artists artists = new();
-
         public void OnGet()
         {
+
+
+            BandMember.TimelineInfo.Add(new TimelineInfo(true, "1969", "Dannelse af Gasolin'", "Gasolin' bliver dannet i 1969 i København af Kim Larsen (vokal), Franz Beckerlee (guitar) og Wili Jønsson (bas). Senere bliver Bjørn Uglebjerg tilføjet som trommeslager, men han bliver i 1971 erstattet af Søren Berlev.")); //(Kilde: Allmusic.com)
+
+            BandMember.TimelineInfo.Add(new TimelineInfo(false, "1970", "Første engelsksprogede singler", "Bandet forsøger sig først på det engelske marked og udgiver singler som \"Silky Sally\", \"Child of Institution\" og \"Johnny the Jackpot\", men de opnår ikke den store opmærksomhed.")); //(Kilde: Music.apple.com)
+
+            BandMember.TimelineInfo.Add(new TimelineInfo(true, "1971", "Første album på dansk", "Gasolin' beslutter at skifte til dansk og udgiver deres første dansksprogede album, Gasolin' 1. Det bliver starten på deres nationale gennembrud.")); //(Kilde: Wikipedia)
+
+            BandMember.TimelineInfo.Add(new TimelineInfo(false, "1972-1978", "Dominerende periode i dansk rock", "I denne periode udgiver Gasolin' en række succesfulde albums, herunder Gasolin' 2, Stakkels Jim, Efter endnu en dag og Gør det noget. Bandet bliver Danmarks største rocknavn.")); //(Kilde: Wikipedia)
+
+            BandMember.TimelineInfo.Add(new TimelineInfo(true, "1974", "Første engelsksprogede album", "Gasolin' forsøger at slå igennem internationalt og udgiver deres første engelsksprogede album, Gasolin' (1974), men de møder begrænset succes uden for Danmark.")); //(Kilde: Wikipedia)
+
+            BandMember.TimelineInfo.Add(new TimelineInfo(false, "August 1978", "Afskedskoncert i Malmö", "Efter interne stridigheder og et mislykket internationalt gennembrud annoncerer Gasolin' deres opløsning. De spiller deres sidste koncert i Malmö i august 1978.")); //(Kilde: Wikipedia)
+
+            BandMember.TimelineInfo.Add(new TimelineInfo(true, "2006", "Dokumentarfilm om Gasolin'", "Dokumentarfilmen Gasolin' bliver udgivet og skaber fornyet interesse for bandet. Den viser interviews med de tidligere medlemmer og fortæller historien om bandets op- og nedture.")); //(Kilde: IMDb)
+
         }
+
     }
 
     public class Card
