@@ -50,14 +50,14 @@ namespace RagnarokGasolin.Pages.Gasolin
         public string LinkPath { get; set; }
         public string ButtonText { get; set; }
 
-        public Card(string title, string imgPath, string impAltText, string description, string linkPath, string buttonText)
+        public Card(string title, string imgPath, string impAltText, string description, string linkPath)
         {
             Title = title;
             ImgPath = imgPath;
             ImpAltText = impAltText;
             Description = description;
             LinkPath = linkPath;
-            ButtonText = buttonText;
+            ButtonText = "Gå til " + Title;
         }
     }
 
@@ -67,11 +67,16 @@ namespace RagnarokGasolin.Pages.Gasolin
 
         public Artists()
         {
-            cards.Add(new Card("Kim Larsen", "KimLarsen/Kim2.jpg", "Kim Larsen Img", "This is him", "KimLarsen", "Click me"));
-            cards.Add(new Card("Bjørn Uglebjerg", "BjørnUglebjerg/Bjørn2.jpg", "Bjørn Uglebjerg Img", "This is him", "Bjørn Uglebjerg", "Click me"));
-            cards.Add(new Card("Søren Berlev", "SørenBerlev/Søren1.jpg", "Søren Berlev Img", "This is him", "Søren Berlev", "Click me"));
-            cards.Add(new Card("Franz Beckerlee", "FranzBeckerlee/Franz1.jpg", "Franz Beckerlee Img", "This is him", "Bjørn Uglebjerg", "Click me"));
-            cards.Add(new Card("Wili Jønsson", "WiliJønsson/Wili3.jpg", "Wili Jønsson Img", "This is him", "Wili Jønsson", "Click me"));
+            cards.Add(new Card("Kim Larsen", "KimLarsen/Kim2.jpg", "Kim Larsen Img",
+            "Forsanger og bandleder", "KimLarsen"));
+            cards.Add(new Card("Bjørn Uglebjerg", "BjørnUglebjerg/Bjørn2.jpg", "Bjørn Uglebjerg Img",
+            "Trommeslager", "Bjørn Uglebjerg"));
+            cards.Add(new Card("Søren Berlev", "SørenBerlev/Søren1.jpg", "Søren Berlev Img",
+            "Trommeslager", "Søren Berlev"));
+            cards.Add(new Card("Franz Beckerlee", "FranzBeckerlee/Franz1.jpg", "Franz Beckerlee Img",
+            "Guitarist", "Bjørn Uglebjerg"));
+            cards.Add(new Card("Wili Jønsson", "WiliJønsson/Wili3.jpg", "Wili Jønsson Img",
+            "Bassist", "Wili Jønsson"));
         }
     }
 }
