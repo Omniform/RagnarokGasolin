@@ -38,10 +38,13 @@ body {
     display: block;
 }
 
+.description{
+    padding: 25px;
+}
+
 .timeline{
     margin: 0 auto;
     max-width: 750px;
-    padding: 25px;
     display: grid;
     grid-template-columns: 1fr 3px 1fr;
 }
@@ -55,25 +58,18 @@ body {
 }
 
 .timeline-date-r {
+    text-align: right;
     position: absolute;
     min-width: 200px;
     top: 50%;
     left: 100%;
     transform: translate(-100%, -10%);
-    
 }
 .timeline-date-l {
     position: absolute;
     min-width: 200px;
     top: 50%;
     transform: translateY(-10%);
-}
-
-.timeline-date-right {
-    text-align: right;
-}
-.timeline-date-left {
-    text-align: left;
 }
 
 .timeline-middle{

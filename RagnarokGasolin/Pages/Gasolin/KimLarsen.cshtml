@@ -1,4 +1,5 @@
 ﻿@page
+@using RagnarokGasolin.Models
 @model RagnarokGasolin.Pages.Gasolin.KimLarsenModel
 @{
 }
@@ -11,7 +12,7 @@
             <div class="col">
             </div>
             <div class="col-8">
-                <a> <img class="img-fluid" src="~/img/Kim4.jpg" /></a>
+                <a> <img class="img-fluid" src="~/img/@Model.BandMember.ImgPath" /></a>
             </div>
             <div class="col">
             </div>
@@ -19,53 +20,63 @@
         <div class="row">
             <div class="col">
                 <h1>
-                    Kim Larsen
+                    @Model.BandMember.Name
                 </h1>
             </div>
         </div>
         <div class="row">
             <div class="col">
-                @* Taget fra https://da.wikipedia.org/wiki/Kim_Larsen *@
-                <p> Kim Mellius Flyvholm Larsen (født 23. oktober 1945 i København, død 30. september 2018 i Odense) 
-                    var en dansk sanger, sangskriver, folkeskolelærer, forfatter og guitarist. 
-                    Han begyndte sin musikalske karriere i 1968 efter en kort periode som folkeskolelærer og blev fra 1969 kendt som medlem af rockgruppen Gasolin. 
-                    I sin tid med Gasolin (varede indtil 1978) udgav Larsen dog også såvel soloplader og plader med sit fritidsband, 
-                    der blev kendt under flere navne, og efter Gasolins opløsning fortsatte Larsen som solist og bandleder.
+                <p class="description">@Model.BandMember.Description
                 </p> 
             </div>
         </div>
     </div>
-    <div class="timeline">
-        <div class="timeline-component timeline-date-parent">
-            <div class="timeline-date-r timeline-date-right">23. oktober 1945</div>
-        </div>
-                
-        <div class="timeline-middle">
-            <div class="timeline-point"></div>
+    
+    <form method="get">
+            @foreach(TimelineInfo timelineInfo in Model.BandMember.TimelineInfo){
+                <div class="timeline">
+                @if(timelineInfo.IsRight){
+                    <div class="timeline-component timeline-date-parent">
+                        <div class="timeline-date-r timeline-date-right">
+                            @timelineInfo.Date
+                        </div>
+                    </div>
 
-        </div>
-        <div class="timeline-component timeline-component-bg">
-            <h2>Fødsel</h2>
-            <p class="timeline-paragraph">Kim Mellius Larsen blev født i København og voksede op med sine forældre, Alfred Mellius Larsen og Eva Flyvholm Olsen, 
-                samt sin storebror Tore Larsen (1942-2007) i Sølvgade i København K</p>
+                    <div class="timeline-middle">
+                        <div class="timeline-point"></div>
 
-        </div>
-        <div class="timeline-component timeline-component-bg">
-            <h2>Fødsel</h2>
-            <p class="timeline-paragraph">
-                Kim Mellius Larsen blev født i København og voksede op med sine forældre, Alfred Mellius Larsen og Eva Flyvholm Olsen,
-                samt sin storebror Tore Larsen (1942-2007) i Sølvgade i København K
-            </p>
+                    </div>
+                    <div class="timeline-component timeline-component-bg">
+                        <h2>
+                            @timelineInfo.Title
+                        </h2>
+                        <p class="timeline-paragraph">
+                            @timelineInfo.Description
+                        </p>
 
-        </div>
-        <div class="timeline-middle">
-            <div class="timeline-point"></div>
+                    </div>
+                } else{
+                    <div class="timeline-component timeline-component-bg">
+                        <h2>
+                            @timelineInfo.Title
+                        </h2>
+                        <p class="timeline-paragraph">
+                            @timelineInfo.Description
+                        </p>
 
-        </div>
-        <div class="timeline-component timeline-date-parent">
-            <div class="timeline-date-l timeline-date-left">23. oktober 1945</div>
-        </div>
-    </div>
+                    </div>
+                    <div class="timeline-middle">
+                        <div class="timeline-point"></div>
+                    </div>
+                    <div class="timeline-component timeline-date-parent">
+                        <div class="timeline-date-l timeline-date-left">
+                            @timelineInfo.Date
+                        </div>
+                    </div>
+                }
+                </div>
+            }
+        </form>
     
     
 

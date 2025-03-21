@@ -63,7 +63,6 @@ AddArtist("Franz Beckerlee", "/Gasolin/Franz Beckerlee");
 AddArtist("Wili Jønsson", "/Gasolin/Wili Jønsson");
 AddArtist("Søren Berlev", "/Gasolin/Søren Berlev");
 AddArtist("Bjørn Uglebjerg", "/Gasolin/Bjørn Uglebjerg");
-AddArtist("gamer", "https://youtube.com");
 
 for (i = 0; i < m_artistNames.length; i++)
 {
