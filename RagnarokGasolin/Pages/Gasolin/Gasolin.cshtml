@@ -17,14 +17,15 @@
 <a asp-page-handler="AddArtists"></a>
 
 <ul>
-    @for (var i = 0; i < Model.GetArtists().Count; i++)
+    @* @for (var i = 0; i < Model.GetArtists().Count; i++) *@
+    @foreach (Card card in Model.artists.cards)
     {
         <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="..." alt="Card image cap">
+            <img class="card-img-top" src="@card.ImgPath" alt="@card.ImpAltText">
             <div class="card-body">
-                <h5 class="card-title">@Model.GetArtistAt(i)</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="@Model.GetLinkAt(i)" class="btn btn-primary">Go somewhere</a>
+                <h5 class="card-title">@card.Title</h5>
+                <p class="card-text">@card.Description</p>
+                <a href="@card.LinkPath" class="btn btn-primary">@card.ButtonText</a>
             </div>
         </div>
     }

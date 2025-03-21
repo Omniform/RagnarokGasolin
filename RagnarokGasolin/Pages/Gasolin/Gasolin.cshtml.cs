@@ -7,110 +7,46 @@ namespace RagnarokGasolin.Pages.Gasolin
     {
         private readonly ILogger<GasolinModel> _logger;
 
-        public MtkArtist m_artists = new();
-
         public GasolinModel(ILogger<GasolinModel> logger)
         {
             _logger = logger;
-
-            m_artists.Add("Kim Larsen", "/Gasolin/KimLarsen");
-            m_artists.Add("Franz Beckerlee", "/Gasolin/Franz Beckerlee");
-            m_artists.Add("Wili Jønsson", "/Gasolin/Wili Jønsson");
-            m_artists.Add("Søren Berlev", "/Gasolin/Søren Berlev");
-            m_artists.Add("Bjørn Uglebjerg", "/Gasolin/Bjørn Uglebjerg");
         }
 
-        public List<string> GetArtists()
-        {
-            return m_artists.GetArtists();
-        }
-
-        public List<string> GetLinks()
-        {
-            return m_artists.GetLinks();
-        }
-
-        public string GetArtistAt(int position)
-        {
-            return m_artists.GetArtistAt(position);
-        }
-
-        public string GetLinkAt(int position)
-        {
-            return m_artists.GetLinkAt(position);
-        }
+        public Artists artists = new();
 
         public void OnGet()
         {
         }
     }
 
-    public class MtkArtist
+    public class Card
     {
-        private List<string> m_artistNames = new();
-        private List<string> m_links = new();
+        public string Title { get; set; }
+        public string ImgPath { get; set; }
+        public string ImpAltText { get; set; }
+        public string Description { get; set; }
+        public string LinkPath { get; set; }
+        public string ButtonText { get; set; }
 
-        public MtkArtist(){}
-
-        public string GetArtistAt(int artistPosition)
+        public Card(string title, string imgPath, string impAltText, string description, string linkPath, string buttonText)
         {
-            return m_artistNames[artistPosition];
-        }
-
-        public string GetLinkAt(int linkPosition)
-        {
-            return m_links[linkPosition];
-        }
-
-        public List<string> GetArtists()
-        {
-            return m_artistNames;
-        }
-
-        public List<string> GetLinks()
-        {
-            return m_links;
-        }
-
-        public void Add(string artist, string link)
-        {
-            m_artistNames.Add(artist);
-            m_links.Add(link);
+            Title = title;
+            ImgPath = imgPath;
+            ImpAltText = impAltText;
+            Description = description;
+            LinkPath = linkPath;
+            ButtonText = buttonText;
         }
     }
 
+    public class Artists
+    {
+        public List<Card> cards = new();
 
-    // public class MtkArtist<T, T2>
-    // {
-    //     private List<T> m_artistNames = new();
-    //     private List<T2> m_links = new();
-
-    //     public MtkArtist(){}
-
-    //     public T GetArtist(int artistPosition)
-    //     {
-    //         return m_artistNames[artistPosition];
-    //     }
-
-    //     public T2 GetLink(int linkPosition)
-    //     {
-    //         return m_links[linkPosition];
-    //     }
-
-    //     public List<T> GetArtists()
-    //     {
-    //         return m_artistNames;
-    //     }
-
-    //     public List<T2> GetLinks()
-    //     {
-    //         return m_links;
-    //     }
-
-    //     public void Add(T artist, T2 link)
-    //     {
-    //         m_artistNames.Add(artist);
-    //         m_links.Add(link);
-    //     }
-    // }
+        public Artists()
+        {
+            cards.Add(new Card("Kim Larsen", "...", "Kim Larsen Img", "This is him", "https://google.com", "Click me"));
+            cards.Add(new Card("Franz Beckerlee", "...", "Franz Beckerlee Img", "This is him", "https://google.com", "Click me"));
+        }
+    }
 }
