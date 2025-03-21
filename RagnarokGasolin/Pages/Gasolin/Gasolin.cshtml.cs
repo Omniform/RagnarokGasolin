@@ -45,11 +45,11 @@ namespace RagnarokGasolin.Pages.Gasolin
 
         public Artists()
         {
-            cards.Add(new Card("Kim Larsen", "...", "Kim Larsen Img", "This is him", "KimLarsen", "Click me"));
-            cards.Add(new Card("Bjørn Uglebjerg", "...", "Bjørn Uglebjerg Img", "This is him", "Bjørn Uglebjerg", "Click me"));
-            cards.Add(new Card("Søren Berlev", "...", "Søren Berlev Img", "This is him", "Søren Berlev", "Click me"));
-            cards.Add(new Card("Franz Beckerlee", "...", "Franz Beckerlee Img", "This is him", "Bjørn Uglebjerg", "Click me"));
-            cards.Add(new Card("Wili Jønsson", "...", "Wili Jønsson Img", "This is him", "Wili Jønsson", "Click me"));
+            cards.Add(new Card("Kim Larsen", "KimLarsen/Kim2.jpg", "Kim Larsen Img", "This is him", "KimLarsen", "Click me"));
+            cards.Add(new Card("Bjørn Uglebjerg", "BjørnUglebjerg/Bjørn2.jpg", "Bjørn Uglebjerg Img", "This is him", "Bjørn Uglebjerg", "Click me"));
+            cards.Add(new Card("Søren Berlev", "SørenBerlev/Søren1.jpg", "Søren Berlev Img", "This is him", "Søren Berlev", "Click me"));
+            cards.Add(new Card("Franz Beckerlee", "FranzBeckerlee/Franz1.jpg", "Franz Beckerlee Img", "This is him", "Bjørn Uglebjerg", "Click me"));
+            cards.Add(new Card("Wili Jønsson", "WiliJønsson/Wili3.jpg", "Wili Jønsson Img", "This is him", "Wili Jønsson", "Click me"));
         }
     }
 }
